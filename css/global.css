@@ -78,11 +78,34 @@ body {
     color: var(--text-mist);
     cursor: pointer;
     transition: color 0.3s ease;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .notification-icon:hover {
     color: var(--primary-color);
 }
+
+.notification-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    width: 18px;
+    height: 18px;
+    background: var(--maroon-grad);
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
 
 .btn-signin {
     padding: 0.6rem 1.5rem;

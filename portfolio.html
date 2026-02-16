@@ -10,6 +10,7 @@
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="css/portfolio.css">
+    <link rel="stylesheet" href="css/sections.css">
 </head>
 
 <body>
@@ -63,20 +64,81 @@
                                 style="color: var(--portfolio-primary); font-weight: 600; text-decoration: none;">Connect
                                 on LinkedIn</a>
                         </div>
-                        
+
                     </div>
                 </div>
             </div>
-            
+
         </section>
     </main>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Portfolio Lab. All rights reserved.</p>
-            <div style="margin-top: 1rem; display: flex; justify-content: center; gap: 1.5rem;">
-                <a id="display-github" href="#" style="color: inherit;"><i data-lucide="github"></i></a>
-                <a id="display-linkedin" href="#" style="color: inherit;"><i data-lucide="linkedin"></i></a>
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <div class="logo">
+                    <i data-lucide="rocket"></i>
+                    <span>KollabX</span>
+                </div>
+                <p>Connecting builders, one idea at a time. Find teammates by skills, not spam.</p>
+                <div class="footer-badges">
+                    <span class="f-badge">Student-first</span>
+                    <span class="f-badge">Skill matching</span>
+                    <span class="f-badge">Private chat</span>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Product</h4>
+                <ul>
+                    <li><a href="explore.html">Features</a></li>
+                    <li><a href="index.html#how-it-works">How it works</a></li>
+                    <li><a href="index.html#faq">FAQ</a></li>
+                    <li><a href="explore.html">Explore ideas</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Community</h4>
+                <ul>
+                    <li><a href="#">Campus ambassadors</a></li>
+                    <li><a href="#">Hackathon partners</a></li>
+                    <li><a href="#">Clubs & societies</a></li>
+                    <li><a href="#">Feedback</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">Privacy & safety</a></li>
+                    <li><a href="#">Terms</a></li>
+                    <li><a href="#">Report an issue</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-newsletter">
+                <h4>Get updates</h4>
+                <p>New features, campus launches, and hackathon-ready updates.</p>
+                <form class="subscribe-form">
+                    <input type="email" placeholder="you@college.edu" required>
+                    <button type="submit" class="btn-subscribe">Subscribe</button>
+                </form>
+                <div class="footer-socials">
+                    <a href="#" class="social-btn"><i data-lucide="mail"></i></a>
+                    <a href="#" class="social-btn"><i data-lucide="link"></i></a>
+                    <a href="#" class="social-btn"><i data-lucide="instagram"></i></a>
+                    <a href="#" class="social-btn"><i data-lucide="github"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 KollabX • Made with 🔥 for problem solvers</p>
+            <div class="status-indicator">
+                <div class="dot"></div>
+                <span>Status: Beta</span>
             </div>
         </div>
     </footer>

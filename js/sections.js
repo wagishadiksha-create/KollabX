@@ -29,8 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.animation = 'fadeInUp 0.6s ease-out forwards';
+                entry.target.classList.add('animate');
             }
         });
     }, observerOptions);
@@ -38,7 +37,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Observe all fade-in-up elements
     const fadeElements = document.querySelectorAll('.fade-in-up');
     fadeElements.forEach(el => {
-        el.style.opacity = '0';
         observer.observe(el);
     });
 
