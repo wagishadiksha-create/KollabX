@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/dashboard.css">
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/explore.css">
+    <link rel="stylesheet" href="css/sections.css">
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
@@ -40,8 +41,8 @@
             <p>Find projects that match your skills and interests</p>
 
             <div class="view-toggle">
-                <button class="toggle-btn active">Explore</button>
-                <button class="toggle-btn">Posted Ideas</button>
+                <button class="toggle-btn active" id="btn-explore">Explore</button>
+                <button class="toggle-btn" id="btn-posted">Posted Ideas</button>
             </div>
         </header>
 
@@ -72,113 +73,215 @@
             </div>
         </section>
 
-        <!-- Project Grid -->
-        <div class="project-grid">
-            <!-- Project Card 1 -->
-            <div class="project-card">
-                <div class="card-header">
-                    <span class="status-badge status-open">Open</span>
-                    <span class="match-badge">0% match</span>
-                </div>
-                <div class="project-info">
-                    <h2>backend builder</h2>
-                    <div class="author-chip">By DEEPANSHU SHARMA</div>
-                    <p class="project-desc">it is quite good project to work on</p>
-                </div>
-                <div class="skills-list">
-                    <span class="skill-tag">gvggv</span>
-                </div>
-                <div class="card-footer">
-                    <div class="members-count">
-                        <i data-lucide="users"></i>
-                        0/4 members
+        <!-- Explore View -->
+        <div id="explore-view">
+            <!-- Project Grid -->
+            <div class="project-grid">
+                <!-- Project Card 1 -->
+                <div class="project-card">
+                    <div class="card-header">
+                        <span class="status-badge status-open">Open</span>
+                        <span class="match-badge">0% match</span>
                     </div>
-                    <button class="btn-apply">Apply</button>
+                    <div class="project-info">
+                        <h2>backend builder</h2>
+                        <div class="author-chip">By DEEPANSHU SHARMA</div>
+                        <p class="project-desc">it is quite good project to work on</p>
+                    </div>
+                    <div class="skills-list">
+                        <span class="skill-tag">gvggv</span>
+                    </div>
+                    <div class="card-footer">
+                        <div class="members-count">
+                            <i data-lucide="users"></i>
+                            0/4 members
+                        </div>
+                        <button class="btn-apply">Apply</button>
+                    </div>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div class="project-card">
+                    <div class="card-header">
+                        <span class="status-badge status-open">Open</span>
+                        <span class="match-badge">0% match</span>
+                    </div>
+                    <div class="project-info">
+                        <h2>Idea</h2>
+                        <div class="author-chip">By AYUSH TRIPATHI</div>
+                        <p class="project-desc">Have an idea oF hackathon</p>
+                    </div>
+                    <div class="skills-list">
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">python</span>
+                    </div>
+                    <div class="card-footer">
+                        <div class="members-count">
+                            <i data-lucide="users"></i>
+                            0/5 members
+                        </div>
+                        <button class="btn-apply">Apply</button>
+                    </div>
+                </div>
+
+                <!-- Project Card 3 -->
+                <div class="project-card">
+                    <div class="card-header">
+                        <span class="status-badge status-open">Open</span>
+                        <span class="match-badge">0% match</span>
+                    </div>
+                    <div class="project-info">
+                        <h2>Idea</h2>
+                        <div class="author-chip">By AYUSH TRIPATHI</div>
+                        <p class="project-desc">This idea is for hackathon</p>
+                    </div>
+                    <div class="skills-list">
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">python</span>
+                    </div>
+                    <div class="card-footer">
+                        <div class="members-count">
+                            <i data-lucide="users"></i>
+                            0/5 members
+                        </div>
+                        <button class="btn-apply">Apply</button>
+                    </div>
+                </div>
+
+                <!-- Project Card 4 -->
+                <div class="project-card">
+                    <div class="card-header">
+                        <span class="status-badge status-open">Open</span>
+                        <span class="match-badge">0% match</span>
+                    </div>
+                    <div class="project-info">
+                        <h2>SkillSwap – AI Skill Barter Platform for Students</h2>
+                        <div class="author-chip">By Deepanshu sharma</div>
+                        <p class="project-desc">Problem In college: Someone knows Robotics but wants UI design Someone
+                            knows
+                            Web dev but wants ML help Someone knows CAD but wants Electronics help But: No...</p>
+                    </div>
+                    <div class="skills-list">
+                        <span class="skill-tag">react</span>
+                        <span class="skill-tag">Ai</span>
+                    </div>
+                    <div class="card-footer">
+                        <div class="members-count">
+                            <i data-lucide="users"></i>
+                            0/5 members
+                        </div>
+                        <button class="btn-apply">Apply</button>
+                    </div>
                 </div>
             </div>
+        </div>
 
-            <!-- Project Card 2 -->
-            <div class="project-card">
-                <div class="card-header">
-                    <span class="status-badge status-open">Open</span>
-                    <span class="match-badge">0% match</span>
-                </div>
-                <div class="project-info">
-                    <h2>Idea</h2>
-                    <div class="author-chip">By AYUSH TRIPATHI</div>
-                    <p class="project-desc">Have an idea oF hackathon</p>
-                </div>
-                <div class="skills-list">
-                    <span class="skill-tag">React</span>
-                    <span class="skill-tag">python</span>
-                </div>
-                <div class="card-footer">
-                    <div class="members-count">
-                        <i data-lucide="users"></i>
-                        0/5 members
-                    </div>
-                    <button class="btn-apply">Apply</button>
-                </div>
-            </div>
-
-            <!-- Project Card 3 -->
-            <div class="project-card">
-                <div class="card-header">
-                    <span class="status-badge status-open">Open</span>
-                    <span class="match-badge">0% match</span>
-                </div>
-                <div class="project-info">
-                    <h2>Idea</h2>
-                    <div class="author-chip">By AYUSH TRIPATHI</div>
-                    <p class="project-desc">This idea is for hackathon</p>
-                </div>
-                <div class="skills-list">
-                    <span class="skill-tag">React</span>
-                    <span class="skill-tag">python</span>
-                </div>
-                <div class="card-footer">
-                    <div class="members-count">
-                        <i data-lucide="users"></i>
-                        0/5 members
-                    </div>
-                    <button class="btn-apply">Apply</button>
-                </div>
-            </div>
-
-            <!-- Project Card 4 -->
-            <div class="project-card">
-                <div class="card-header">
-                    <span class="status-badge status-open">Open</span>
-                    <span class="match-badge">0% match</span>
-                </div>
-                <div class="project-info">
-                    <h2>SkillSwap – AI Skill Barter Platform for Students</h2>
-                    <div class="author-chip">By Deepanshu sharma</div>
-                    <p class="project-desc">Problem In college: Someone knows Robotics but wants UI design Someone knows
-                        Web dev but wants ML help Someone knows CAD but wants Electronics help But: No...</p>
-                </div>
-                <div class="skills-list">
-                    <span class="skill-tag">react</span>
-                    <span class="skill-tag">Ai</span>
-                </div>
-                <div class="card-footer">
-                    <div class="members-count">
-                        <i data-lucide="users"></i>
-                        0/5 members
-                    </div>
-                    <button class="btn-apply">Apply</button>
-                </div>
+        <!-- Posted Ideas View -->
+        <div id="posted-ideas-view" class="hidden">
+            <div class="empty-state-container">
+                <div class="empty-emoji">😳</div>
+                <h2>No ideas posted</h2>
+                <p>Check back later or post your own idea</p>
             </div>
         </div>
     </main>
 
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <div class="logo">
+                    <i data-lucide="rocket"></i>
+                    <span>KollabX</span>
+                </div>
+                <p>Connecting builders, one idea at a time. Find teammates by skills, not spam.</p>
+                <div class="footer-badges">
+                    <span class="f-badge">Student-first</span>
+                    <span class="f-badge">Skill matching</span>
+                    <span class="f-badge">Private chat</span>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Product</h4>
+                <ul>
+                    <li><a href="explore.html">Features</a></li>
+                    <li><a href="index.html#how-it-works">How it works</a></li>
+                    <li><a href="index.html#faq">FAQ</a></li>
+                    <li><a href="explore.html">Explore ideas</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Community</h4>
+                <ul>
+                    <li><a href="#">Campus ambassadors</a></li>
+                    <li><a href="#">Hackathon partners</a></li>
+                    <li><a href="#">Clubs & societies</a></li>
+                    <li><a href="#">Feedback</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">Privacy & safety</a></li>
+                    <li><a href="#">Terms</a></li>
+                    <li><a href="#">Report an issue</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-newsletter">
+                <h4>Get updates</h4>
+                <p>New features, campus launches, and hackathon-ready updates.</p>
+                <form class="subscribe-form">
+                    <input type="email" placeholder="you@college.edu" required>
+                    <button type="submit" class="btn-subscribe">Subscribe</button>
+                </form>
+                <div class="footer-socials">
+                    <a href="#" class="social-btn"><i data-lucide="mail"></i></a>
+                    <a href="#" class="social-btn"><i data-lucide="link"></i></a>
+                    <a href="#" class="social-btn"><i data-lucide="instagram"></i></a>
+                    <a href="#" class="social-btn"><i data-lucide="github"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 KollabX • Made with 🔥 for problem solvers</p>
+            <div class="status-indicator">
+                <div class="dot"></div>
+                <span>Status: Beta</span>
+            </div>
+        </div>
+    </footer>
+
     <script>
         // Initialize Lucide icons
         lucide.createIcons();
+
+        // View Toggling Logic
+        const btnExplore = document.getElementById('btn-explore');
+        const btnPosted = document.getElementById('btn-posted');
+        const exploreView = document.getElementById('explore-view');
+        const postedView = document.getElementById('posted-ideas-view');
+
+        btnExplore.addEventListener('click', () => {
+            btnExplore.classList.add('active');
+            btnPosted.classList.remove('active');
+            exploreView.classList.remove('hidden');
+            postedView.classList.add('hidden');
+        });
+
+        btnPosted.addEventListener('click', () => {
+            btnPosted.classList.add('active');
+            btnExplore.classList.remove('active');
+            postedView.classList.remove('hidden');
+            exploreView.classList.add('hidden');
+        });
     </script>
     <script src="js/main.js"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script>lucide.createIcons();</script>
 </body>
 
 </html>
