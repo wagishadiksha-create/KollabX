@@ -14,7 +14,7 @@
 
 <body>
     <nav class="navbar">
-        <h1 style="color: var(--primary-color);">Kollabx</h1>
+        <h1>Kollabx</h1>
         <ul class="nav-links">
             <li><a href="index.html" class="nav-item">Home</a></li>
             <li><a href="explore.html" class="nav-item">Explore</a></li>
@@ -38,18 +38,18 @@
                 <h1>Welcome back 👋</h1>
                 <p>Manage your requests, teams, and recommended projects.</p>
             </div>
-            <button class="btn-post-idea">
+            <a href="post.html" class="btn-post-idea">
                 <i data-lucide="plus"></i>
                 Post New Idea
-            </button>
+            </a>
         </header>
 
         <!-- Tabs -->
         <div class="dashboard-tabs">
-            <button class="tab-item active">All</button>
-            <button class="tab-item">Recommended</button>
-            <button class="tab-item">Requests</button>
-            <button class="tab-item">Teams</button>
+            <button class="tab-item active" data-tab="all">All</button>
+            <button class="tab-item" data-tab="recommended">Recommended</button>
+            <button class="tab-item" data-tab="requests">Requests</button>
+            <button class="tab-item" data-tab="teams">Teams</button>
         </div>
 
         <!-- Stats Grid -->
@@ -71,43 +71,78 @@
         <!-- Content Grid -->
         <div class="content-grid">
             <!-- Recommended for You -->
-            <div class="glass-card section-card">
-                <div class="card-header">
-                    <h2>Recommended for You</h2>
-                    <a href="explore.html" class="explore-link">Explore →</a>
+            <div class="horizontal-card" data-category="recommended">
+                <div class="card-icon">
+                    <i data-lucide="shield"></i>
                 </div>
-                <div class="card-body empty-state">
-                    <p>No recommendations yet. Update your profile skills.</p>
+                <div class="card-content">
+                    <h2>Recommended for You</h2>
+                    <p>Discover projects tailored to your specific skill set and interests.</p>
+                    <div class="empty-state">
+                        <span class="sub-text">No recommendations yet. Update your profile skills.</span>
+                    </div>
+                </div>
+                <div class="card-action">
+                    <a href="explore.html" class="btn-arrow">
+                        <i data-lucide="arrow-right"></i>
+                    </a>
                 </div>
             </div>
 
             <!-- Incoming Requests -->
-            <div class="glass-card section-card">
-                <div class="card-header">
-                    <h2>Incoming Requests</h2>
+            <div class="horizontal-card" data-category="requests">
+                <div class="card-icon">
+                    <i data-lucide="filter"></i>
                 </div>
-                <div class="card-body empty-state">
-                    <p>No one has requested to join your projects yet.</p>
+                <div class="card-content">
+                    <h2>Incoming Requests</h2>
+                    <p>Manage project join requests from other talented builders.</p>
+                    <div class="empty-state">
+                        <span class="sub-text">No one has requested to join your projects yet.</span>
+                    </div>
+                </div>
+                <div class="card-action">
+                    <button class="btn-arrow">
+                        <i data-lucide="arrow-right"></i>
+                    </button>
                 </div>
             </div>
 
             <!-- My Requests -->
-            <div class="glass-card section-card">
-                <div class="card-header">
-                    <h2>My Requests</h2>
+            <div class="horizontal-card" data-category="requests">
+                <div class="card-icon">
+                    <i data-lucide="layout"></i>
                 </div>
-                <div class="card-body empty-state">
-                    <p>You haven't applied to any projects yet.</p>
+                <div class="card-content">
+                    <h2>My Requests</h2>
+                    <p>Track the status of your applications to join exciting new projects.</p>
+                    <div class="empty-state">
+                        <span class="sub-text">You haven't applied to any projects yet.</span>
+                    </div>
+                </div>
+                <div class="card-action">
+                    <button class="btn-arrow">
+                        <i data-lucide="arrow-right"></i>
+                    </button>
                 </div>
             </div>
 
             <!-- My Teams -->
-            <div class="glass-card section-card">
-                <div class="card-header">
-                    <h2>My Teams</h2>
+            <div class="horizontal-card" data-category="teams">
+                <div class="card-icon">
+                    <i data-lucide="rocket"></i>
                 </div>
-                <div class="card-body empty-state">
-                    <p>You're not in any teams yet. Explore and apply.</p>
+                <div class="card-content">
+                    <h2>My Teams</h2>
+                    <p>Collaborate and build with your roster of teammates across all projects.</p>
+                    <div class="empty-state">
+                        <span class="sub-text">You're not in any teams yet. Explore and apply.</span>
+                    </div>
+                </div>
+                <div class="card-action">
+                    <button class="btn-arrow">
+                        <i data-lucide="arrow-right"></i>
+                    </button>
                 </div>
             </div>
         </div>
