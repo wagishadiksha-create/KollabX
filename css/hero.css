@@ -51,14 +51,110 @@
 
 /* Headline */
 .hero h1 {
-    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-size: clamp(2rem, 4.5vw, 3.5rem);
     /* Decreased size */
     line-height: 1.2;
     font-weight: 800;
-    letter-spacing: -0.03em;
+    letter-spacing: -0.02em;
+    /* Tighter letter spacing */
     margin-bottom: 2rem;
     color: #000000;
-    /* High contrast black */
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    /* Space between "Find your next" and rotating card */
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Rotating Text Animation - CSS Only */
+.card {
+    --bg-color: #111;
+    background-color: var(--bg-color);
+    padding: 0.5rem 1.5rem;
+    border-radius: 1.25rem;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.loader {
+    color: rgb(124, 124, 124);
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    /* Responsive size */
+    box-sizing: content-box;
+    height: 40px;
+    padding: 10px 10px;
+    display: flex;
+    border-radius: 8px;
+}
+
+.words {
+    overflow: hidden;
+    position: relative;
+}
+
+.words::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(var(--bg-color) 10%,
+            transparent 30%,
+            transparent 70%,
+            var(--bg-color) 90%);
+    z-index: 20;
+}
+
+.word {
+    display: block;
+    height: 100%;
+    padding-left: 6px;
+    color: #956afa;
+    animation: spin_4991 6s infinite;
+    /* Slowed down for readability */
+}
+
+@keyframes spin_4991 {
+    10% {
+        transform: translateY(-105%);
+    }
+
+    20% {
+        transform: translateY(-100%);
+    }
+
+    30% {
+        transform: translateY(-205%);
+    }
+
+    40% {
+        transform: translateY(-200%);
+    }
+
+    50% {
+        transform: translateY(-305%);
+    }
+
+    60% {
+        transform: translateY(-300%);
+    }
+
+    70% {
+        transform: translateY(-405%);
+    }
+
+    80% {
+        transform: translateY(-400%);
+    }
+
+    90% {
+        transform: translateY(-505%);
+    }
+
+    100% {
+        transform: translateY(-500%);
+    }
 }
 
 /* Subtitle */
@@ -71,50 +167,80 @@
     font-weight: 400;
 }
 
-/* Buttons */
+/* Buttons - Circular Fill Animation */
 .hero-buttons {
     display: flex;
     gap: 1.5rem;
     justify-content: center;
     flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeIn 0.8s ease-out 1s forwards;
 }
 
 .btn-hero {
+    background: transparent;
+    position: relative;
     padding: 1rem 2.5rem;
-    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 1rem;
     font-weight: 600;
     text-decoration: none;
-    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    position: relative;
+    cursor: pointer;
+    border-radius: 25px;
+    outline: none;
     overflow: hidden;
+    transition: color 0.3s 0.1s ease-out;
+    text-align: center;
+}
+
+.btn-hero::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    content: '';
+    border-radius: 50%;
+    display: block;
+    width: 20em;
+    height: 20em;
+    left: -5em;
+    text-align: center;
+    transition: box-shadow 0.5s ease-out;
+    z-index: -1;
 }
 
 /* Primary Button */
 .btn-primary {
-    background: var(--primary-color);
-    color: white;
-    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
 }
 
 .btn-primary:hover {
-    transform: translateY(-2px);
-    background: #1d4ed8;
-    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+    color: #fff;
+    border: 1px solid var(--primary-color);
 }
 
-/* Secondary Button - Glass on Glass */
+.btn-primary:hover::before {
+    box-shadow: inset 0 0 0 10em var(--primary-color);
+}
+
+/* Secondary Button */
 .btn-secondary {
-    background: rgba(255, 255, 255, 0.3);
+    border: 1px solid var(--text-main);
     color: var(--text-main);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(5px);
 }
 
 .btn-secondary:hover {
-    background: rgba(255, 255, 255, 0.5);
-    border-color: rgba(255, 255, 255, 0.8);
-    transform: translateY(-2px);
+    color: #fff;
+    border: 1px solid var(--text-main);
+}
+
+.btn-secondary:hover::before {
+    box-shadow: inset 0 0 0 10em var(--text-main);
 }
 
 /* Animations */
@@ -142,8 +268,8 @@
     opacity: 0;
     transform: translateY(100%);
     animation: revealText 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
-    margin-right: 0.25em;
-    /* Fix spacing between words */
+    margin-right: 0.10em;
+    /* Tighter letter spacing */
 }
 
 @keyframes revealText {
@@ -158,106 +284,4 @@
     }
 }
 
-/* Rotating Words Animation - User Provided */
-.word-card {
-    /* Renamed from .card to .word-card to avoid conflicts */
-    --bg-color: #111;
-    background-color: var(--bg-color);
-    padding: 0.5rem 1.5rem;
-    /* Adjusted opacity/sizing for inline feel */
-    border-radius: 1.25rem;
-    display: inline-block;
-    vertical-align: middle;
-    margin-left: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-.loader {
-    color: rgb(124, 124, 124);
-    font-family: var(--font-primary, "Poppins", sans-serif);
-    /* Use site font */
-    font-weight: 500;
-    font-size: 25px;
-    /* Matched to roughly fit H1 scale or slightly smaller */
-    -webkit-box-sizing: content-box;
-    box-sizing: content-box;
-    height: 40px;
-    padding: 0;
-    /* Adjusted padding */
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    border-radius: 8px;
-}
-
-.words {
-    overflow: hidden;
-    position: relative;
-    height: 100%;
-    /* Ensure fit */
-}
-
-/* Gradient mask for the scrolling words */
-.words::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(var(--bg-color) 0%,
-            transparent 20%,
-            transparent 80%,
-            var(--bg-color) 100%);
-    z-index: 20;
-}
-
-.word {
-    display: block;
-    height: 100%;
-    padding-left: 6px;
-    color: #956afa;
-    animation: spin_4991 4s infinite;
-    line-height: 40px;
-    /* Vertically center */
-    white-space: nowrap;
-}
-
-@keyframes spin_4991 {
-    10% {
-        -webkit-transform: translateY(-102%);
-        transform: translateY(-102%);
-    }
-
-    25% {
-        -webkit-transform: translateY(-100%);
-        transform: translateY(-100%);
-    }
-
-    35% {
-        -webkit-transform: translateY(-202%);
-        transform: translateY(-202%);
-    }
-
-    50% {
-        -webkit-transform: translateY(-200%);
-        transform: translateY(-200%);
-    }
-
-    60% {
-        -webkit-transform: translateY(-302%);
-        transform: translateY(-302%);
-    }
-
-    75% {
-        -webkit-transform: translateY(-300%);
-        transform: translateY(-300%);
-    }
-
-    85% {
-        -webkit-transform: translateY(-402%);
-        transform: translateY(-402%);
-    }
-
-    100% {
-        -webkit-transform: translateY(-400%);
-        transform: translateY(-400%);
-    }
-}
+/* CSS Cleaned up - Rotating Words Removed */
